@@ -1,12 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, FC } from "react";
 import { FcGoogle as Google } from "react-icons/fc";
 import { FaApple as Apple } from "react-icons/fa";
 
-type Props = {};
-const SignInButton = ({ icon, text }) => {
+interface ButtonProps {
+  icon: string;
+  text: string;
+}
+
+const SignInButton: FC<ButtonProps> = (props) => {
   return (
     <button className="bg-white text-black rounded-full h-10 w-full flex justify-center items-center mx-auto mb-7 gap-4">
-      {icon === "google" ? <Google /> : <Apple />} {text}
+      {props.icon === "google" ? <Google /> : <Apple />} {props.text}
     </button>
   );
 };
