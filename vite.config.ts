@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [
     react({
-      include: "**/*.tsx",
+      include: "**/*.tsx, **/pages/*.tsx",
     }),
   ],
   server: {
