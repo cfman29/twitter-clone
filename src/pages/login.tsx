@@ -1,12 +1,13 @@
 import React from "react";
-import SignInButton from "../components/functions";
+import SignInButton from "../components/signinbutton";
 import { RxCross2 as Close } from "react-icons/rx";
 import { FaTwitter as Twitter } from "react-icons/fa";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 export default function Login() {
   return (
     <div className="bg-mainBackground min-h-screen flex flex-col justify-center items-center text-white">
-      <div className="bg-cardBackground min-h-[400px] max-h-[90vh] h-[650px] min-w-[600px] max-w-[80vw]  ">
+      <div className="bg-cardBackground min-h-[400px] max-h-[90vh] h-[650px] min-w-[600px] max-w-[80vw] rounded-lg">
         <div className="w-100"></div>
         <Close color="white" className="mx-2 my-2" strokeWidth="2" />
         <Twitter color="white" className="my-0 mx-auto" />
@@ -15,15 +16,19 @@ export default function Login() {
         </h1>
         <div id="login_options" className="text-center w-2/5 mx-auto">
           <div className="my-4">
-            <SignInButton icon="google" text="Sign in with google" />
+            <Link to="/">
+              <SignInButton icon="google" text="Sign in with google" />
+            </Link>
             <SignInButton icon="apple" text="Sign in with google" />
           </div>
           <p className="my-1">or</p>
+
           <input
             type="text"
             placeholder="Phone, email address or username"
             className="h-12 w-full rounded border border-solid border-slate-300 bg-transparent px-3"
           />
+
           <input
             type="button"
             className="bg-white text-black rounded-full h-10 w-full my-3"

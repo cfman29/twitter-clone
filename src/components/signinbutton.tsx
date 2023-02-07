@@ -6,6 +6,7 @@ interface ButtonProps {
   icon: string;
   text: string;
 }
+interface SearchBarProps {}
 
 const SignInButton: FC<ButtonProps> = (props) => {
   return (
